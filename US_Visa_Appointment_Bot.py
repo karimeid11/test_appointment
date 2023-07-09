@@ -147,6 +147,8 @@ def run_bot(driver):
 	while Appointment_Not_Early_Enough:
 		while Try_Again:
 			time.sleep(3600) #added wait time of one hour
+			logout_to_website(driver)
+			time.sleep(1)
 			login_to_website(driver)
 			time.sleep(1)
 			elapsed_time = (time.time())- start_time
@@ -263,6 +265,6 @@ if __name__ == "__main__":
 		driver.country_code = Embassy_Country_Code[Selected_country_code]
 		driver.city_code = Selected_city_code
 		#time.sleep(60) #added wait time
-		#login_to_website(driver)
+		login_to_website(driver)
 
 		run_bot(driver)
